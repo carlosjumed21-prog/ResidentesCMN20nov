@@ -132,13 +132,7 @@
             text-align: center;
         }
 
-        .link-card .arrow-icon {
-            font-size: 12px;
-            color: var(--text-muted);
-            transition: transform 0.3s ease;
-        }
-
-        /* Submenú desplegable de precauciones estilo acordeón nativo */
+        /* Menú desplegable nativo */
         details {
             background: var(--bg-color);
             border: 1px solid var(--border);
@@ -213,26 +207,39 @@
             transition: all 0.2s ease;
         }
 
-        .sub-card:hover {
-            background: var(--bg-color);
-            border-color: var(--accent);
-            transform: translateY(-1px);
-        }
-
         .sub-card .left {
             display: flex;
             align-items: center;
             gap: 12px;
         }
 
-        .sub-card i {
-            color: var(--accent);
-            font-size: 15px;
-        }
-
         .sub-card .external-icon {
             font-size: 11px;
             color: var(--text-muted);
+        }
+
+        /* Colores personalizados para cada botón de precaución */
+        .sub-card.estandar { border-left: 4px solid #ff4d4d; }
+        .sub-card.estandar i { color: #ff4d4d; }
+
+        .sub-card.protector { border-left: 4px solid #95a5a6; }
+        .sub-card.protector i { color: #95a5a6; }
+
+        .sub-card.contacto { border-left: 4px solid #f1c40f; }
+        .sub-card.contacto i { color: #f1c40f; }
+
+        .sub-card.contacto-plus { border-left: 4px solid #e67e22; }
+        .sub-card.contacto-plus i { color: #e67e22; }
+
+        .sub-card.gotas { border-left: 4px solid #2ecc71; }
+        .sub-card.gotas i { color: #2ecc71; }
+
+        .sub-card.aerea { border-left: 4px solid #3498db; }
+        .sub-card.aerea i { color: #3498db; }
+
+        .sub-card:hover {
+            background: var(--bg-color);
+            transform: translateX(4px);
         }
 
         footer {
@@ -263,7 +270,7 @@
         <!-- Enlaces -->
         <div class="links-list">
             
-            <!-- Menú Desplegable con etiquetas nativas HTML -->
+            <!-- Menú Desplegable con Precauciones Coloreadas -->
             <details>
                 <summary>
                     <div class="left">
@@ -274,7 +281,8 @@
                 </summary>
 
                 <div class="submenu">
-                    <a href="estandart.png" target="_blank" class="sub-card">
+                    <!-- Estandar: Rojo -->
+                    <a href="estandart.png" target="_blank" class="sub-card estandar">
                         <div class="left">
                             <i class="fa-solid fa-circle-check"></i>
                             <span>Precauciones Estándar</span>
@@ -282,7 +290,8 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
 
-                    <a href="protector.png" target="_blank" class="sub-card">
+                    <!-- Protector: Gris -->
+                    <a href="protector.png" target="_blank" class="sub-card protector">
                         <div class="left">
                             <i class="fa-solid fa-user-shield"></i>
                             <span>Precauciones Aislamiento Protector</span>
@@ -290,7 +299,8 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
 
-                    <a href="contacto.png" target="_blank" class="sub-card">
+                    <!-- Contacto: Amarillo -->
+                    <a href="contacto.png" target="_blank" class="sub-card contacto">
                         <div class="left">
                             <i class="fa-solid fa-handshake-angle"></i>
                             <span>Precauciones por Contacto</span>
@@ -298,7 +308,8 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
 
-                    <a href="contacto-plus.png" target="_blank" class="sub-card">
+                    <!-- Contacto Plus: Naranja -->
+                    <a href="contacto-plus.png" target="_blank" class="sub-card contacto-plus">
                         <div class="left">
                             <i class="fa-solid fa-triangle-exclamation"></i>
                             <span>Precauciones por Contacto Plus</span>
@@ -306,7 +317,8 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
 
-                    <a href="gotas.png" target="_blank" class="sub-card">
+                    <!-- Gotas: Verde -->
+                    <a href="gotas.png" target="_blank" class="sub-card gotas">
                         <div class="left">
                             <i class="fa-solid fa-droplet"></i>
                             <span>Precauciones por Gotas</span>
@@ -314,7 +326,8 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
 
-                    <a href="aerea.png" target="_blank" class="sub-card">
+                    <!-- Vía Aérea: Azul -->
+                    <a href="aerea.png" target="_blank" class="sub-card aerea">
                         <div class="left">
                             <i class="fa-solid fa-wind"></i>
                             <span>Precauciones por Vía Aérea</span>
