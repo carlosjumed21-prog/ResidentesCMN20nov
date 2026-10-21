@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Carlos Ju - Residentes CMN 20 de Noviembre</title>
+    <title>Dr. Carlos Badillo - Residentes CMN 20 de Noviembre</title>
     <!-- Google Fonts & FontAwesome para iconos -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -107,6 +107,9 @@
             font-weight: 500;
             font-size: 15px;
             transition: all 0.2s ease;
+            cursor: pointer;
+            width: 100%;
+            text-align: left;
         }
 
         .link-card:hover {
@@ -129,9 +132,48 @@
             text-align: center;
         }
 
-        .link-card .fa-chevron-right {
+        .link-card .arrow-icon {
             font-size: 12px;
             color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        /* Submenú desplegable de precauciones */
+        .submenu {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 10px;
+            padding-left: 15px;
+        }
+
+        .submenu.active {
+            display: flex;
+        }
+
+        .sub-card {
+            background: rgba(22, 27, 34, 0.8);
+            border: 1px dashed var(--border);
+            padding: 12px 16px;
+            border-radius: 10px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.2s ease;
+        }
+
+        .sub-card:hover {
+            background: var(--card-hover);
+            border-color: var(--accent);
+            border-style: solid;
+        }
+
+        .sub-card i {
+            color: var(--accent);
+            font-size: 15px;
         }
 
         footer {
@@ -161,6 +203,46 @@
 
         <!-- Enlaces -->
         <div class="links-list">
+            
+            <!-- Botón Principal con Desplegable -->
+            <div>
+                <button class="link-card" onclick="toggleSubmenu()">
+                    <div class="left">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span>Medidas de Precaución</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right arrow-icon" id="arrow"></i>
+                </button>
+
+                <!-- Submenú con las 6 categorías -->
+                <div class="submenu" id="precautionsSubmenu">
+                    <a href="#" class="sub-card">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <span>Precauciones Estándar</span>
+                    </a>
+                    <a href="#" class="sub-card">
+                        <i class="fa-solid fa-user-shield"></i>
+                        <span>Precauciones Aislamiento Protector</span>
+                    </a>
+                    <a href="#" class="sub-card">
+                        <i class="fa-solid fa-handshake-angle"></i>
+                        <span>Precauciones por Contacto</span>
+                    </a>
+                    <a href="#" class="sub-card">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                        <span>Precauciones por Contacto Plus</span>
+                    </a>
+                    <a href="#" class="sub-card">
+                        <i class="fa-solid fa-droplet"></i>
+                        <span>Precauciones por Gotas</span>
+                    </a>
+                    <a href="#" class="sub-card">
+                        <i class="fa-solid fa-wind"></i>
+                        <span>Precauciones por Vía Aérea</span>
+                    </a>
+                </div>
+            </div>
+
             <a href="#" target="_blank" class="link-card">
                 <div class="left">
                     <i class="fa-solid fa-laptop-code"></i>
@@ -190,6 +272,22 @@
             Desarrollado para <a href="#">ResidentesCMN20nov</a> &copy; 2026
         </footer>
     </div>
+
+    <!-- Script para abrir/cerrar el menú desplegable -->
+    <script>
+        function toggleSubmenu() {
+            const submenu = document.getElementById('precautionsSubmenu');
+            const arrow = document.getElementById('arrow');
+            
+            submenu.classList.toggle('active');
+            
+            if (submenu.classList.contains('active')) {
+                arrow.style.transform = 'rotate(90deg)';
+            } else {
+                arrow.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
 
 </body>
 </html>
