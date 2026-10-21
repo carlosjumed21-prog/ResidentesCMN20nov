@@ -178,7 +178,7 @@
             font-size: 15px;
         }
 
-        /* Estilo para la Ventana Modal (Pantalla externa de imagen) */
+        /* Ventana Modal */
         .modal {
             display: none;
             position: fixed;
@@ -273,29 +273,29 @@
                     <i class="fa-solid fa-chevron-right arrow-icon" id="arrow"></i>
                 </button>
 
-                <!-- Submenú con las 6 categorías (Llaman a la función showImage con su título e imagen) -->
+                <!-- Submenú de Precauciones -->
                 <div class="submenu" id="precautionsSubmenu">
-                    <div class="sub-card" onclick="showImage('Precauciones Estándar', 'ruta-o-url-imagen-estandar.jpg')">
+                    <div class="sub-card" onclick="showImage('Precauciones Estándar', 'estandart.png')">
                         <i class="fa-solid fa-circle-check"></i>
                         <span>Precauciones Estándar</span>
                     </div>
-                    <div class="sub-card" onclick="showImage('Precauciones Aislamiento Protector', 'ruta-o-url-imagen-protector.jpg')">
+                    <div class="sub-card" onclick="showImage('Precauciones Aislamiento Protector', 'protector.png')">
                         <i class="fa-solid fa-user-shield"></i>
                         <span>Precauciones Aislamiento Protector</span>
                     </div>
-                    <div class="sub-card" onclick="showImage('Precauciones por Contacto', 'ruta-o-url-imagen-contacto.jpg')">
+                    <div class="sub-card" onclick="showImage('Precauciones por Contacto', 'contacto.png')">
                         <i class="fa-solid fa-handshake-angle"></i>
                         <span>Precauciones por Contacto</span>
                     </div>
-                    <div class="sub-card" onclick="showImage('Precauciones por Contacto Plus', 'ruta-o-url-imagen-contacto-plus.jpg')">
+                    <div class="sub-card" onclick="showImage('Precauciones por Contacto Plus', 'contacto-plus.png')">
                         <i class="fa-solid fa-triangle-exclamation"></i>
                         <span>Precauciones por Contacto Plus</span>
                     </div>
-                    <div class="sub-card" onclick="showImage('Precauciones por Gotas', 'ruta-o-url-imagen-gotas.jpg')">
+                    <div class="sub-card" onclick="showImage('Precauciones por Gotas', 'gotas.png')">
                         <i class="fa-solid fa-droplet"></i>
                         <span>Precauciones por Gotas</span>
                     </div>
-                    <div class="sub-card" onclick="showImage('Precauciones por Vía Aérea', 'ruta-o-url-imagen-aerea.jpg')">
+                    <div class="sub-card" onclick="showImage('Precauciones por Vía Aérea', 'aerea.png')">
                         <i class="fa-solid fa-wind"></i>
                         <span>Precauciones por Vía Aérea</span>
                     </div>
@@ -332,7 +332,7 @@
         </footer>
     </div>
 
-    <!-- Ventana Modal para mostrar la imagen -->
+    <!-- Ventana Modal -->
     <div class="modal" id="imageModal" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="close-btn" onclick="closeModal()">&times;</span>
