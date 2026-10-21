@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carlos Badillo - Residentes CMN 20 de Noviembre</title>
+    <!-- Google Fonts & FontAwesome para iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0f1117;
+            --card-bg: #161b22;
+            --card-hover: #1f242c;
+            --text-main: #f0f6fc;
+            --text-muted: #8b949e;
+            --accent: #58a6ff;
+            --border: #30363d;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .avatar-container {
+            position: relative;
+            width: 110px;
+            height: 110px;
+            margin: 0 auto 20px;
+        }
+
+        .avatar {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--accent);
+            background-color: #21262d;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--accent);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(88, 166, 255, 0.1);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 500;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(88, 166, 255, 0.2);
+        }
+
+        p.bio {
+            color: var(--text-muted);
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 30px;
+            padding: 0 10px;
+        }
+
+        .links-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .link-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            padding: 16px 20px;
+            border-radius: 12px;
+            color: var(--text-main);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s ease;
+        }
+
+        .link-card:hover {
+            background: var(--card-hover);
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .link-card .left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .link-card i {
+            font-size: 18px;
+            color: var(--accent);
+            width: 24px;
+            text-align: center;
+        }
+
+        .link-card .fa-chevron-right {
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: 35px;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Avatar o Icono Inicial -->
+        <div class="avatar-container">
+            <div class="avatar">
+                <i class="fa-solid fa-user-doctor"></i>
+            </div>
+        </div>
+
+        <!-- Título y Rol -->
+        <h1>Dr. Carlos Badillo</h1>
+        <div class="badge">Epidemiología • CMN 20 de Noviembre</div>
+        <p class="bio">Sistemas de vigilancia epidemiológica, herramientas de gestión clínica y desarrollo de software médico institucional.</p>
+
+        <!-- Enlaces tipo Truvisory / Link-in-bio -->
+        <div class="links-list">
+            <a href="https://github.com/carlosjumed21-prog" target="_blank" class="link-card">
+                <div class="left">
+                    <i class="fa-brands fa-github"></i>
+                    <span>Repositorios de GitHub</span>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <a href="#" target="_blank" class="link-card">
+                <div class="left">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span>Sistema VIGILE (Panel Streamlit)</span>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <a href="#" target="_blank" class="link-card">
+                <div class="left">
+                    <i class="fa-solid fa-file-lines"></i>
+                    <span>Protocolos y Publicaciones</span>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+
+            <a href="mailto:tu-correo@example.com" class="link-card">
+                <div class="left">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>Contacto Profesional</span>
+                </div>
+                <i class="fa-solid fa-chevron-right"></i>
+            </a>
+        </div>
+
+        <footer>
+            Desarrollado para <a href="#">ResidentesCMN20nov</a> &copy; 2026
+        </footer>
+    </div>
+
+</body>
+</html>
