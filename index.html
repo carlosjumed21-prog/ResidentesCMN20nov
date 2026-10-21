@@ -41,16 +41,31 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 20px;
-            padding: 40px 30px;
+            overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             text-align: center;
+            padding-bottom: 40px;
         }
 
+        /* Estivos para la foto de portada */
+        .cover-container {
+            position: relative;
+            width: 100%;
+            height: 160px;
+        }
+
+        .cover-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Contenedor y superposición del Avatar */
         .avatar-container {
             position: relative;
             width: 110px;
             height: 110px;
-            margin: 0 auto 20px;
+            margin: -55px auto 20px auto;
         }
 
         .avatar {
@@ -58,7 +73,12 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            border: 2px solid var(--accent);
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .content-padding {
+            padding: 0 30px;
         }
 
         h1 {
@@ -132,7 +152,6 @@
             text-align: center;
         }
 
-        /* Menú desplegable nativo */
         details {
             background: var(--bg-color);
             border: 1px solid var(--border);
@@ -218,22 +237,16 @@
             color: var(--text-muted);
         }
 
-        /* Colores personalizados según el código solicitado */
         .sub-card.estandar { border-left: 4px solid #ff4d4d; }
         .sub-card.estandar i { color: #ff4d4d; }
-
         .sub-card.protector { border-left: 4px solid #95a5a6; }
         .sub-card.protector i { color: #95a5a6; }
-
         .sub-card.contacto { border-left: 4px solid #f1c40f; }
         .sub-card.contacto i { color: #f1c40f; }
-
         .sub-card.contacto-plus { border-left: 4px solid #e67e22; }
         .sub-card.contacto-plus i { color: #e67e22; }
-
         .sub-card.gotas { border-left: 4px solid #2ecc71; }
         .sub-card.gotas i { color: #2ecc71; }
-
         .sub-card.aerea { border-left: 4px solid #3498db; }
         .sub-card.aerea i { color: #3498db; }
 
@@ -257,115 +270,115 @@
 <body>
 
     <div class="container">
-        <!-- Foto de Perfil -->
+        <!-- Foto de Portada -->
+        <div class="cover-container">
+            <img src="assets/portada.heic" alt="Portada" class="cover-image">
+        </div>
+
+        <!-- Foto de Perfil Superpuesta -->
         <div class="avatar-container">
             <img src="https://github.com/carlosjumed21-prog.png" alt="Dr. Carlos Badillo" class="avatar">
         </div>
 
-        <!-- Título y Rol -->
-        <h1>Dr. Carlos Badillo</h1>
-        <div class="badge">Epidemiología • CMN 20 de Noviembre</div>
-        <p class="bio">Sistemas de vigilancia epidemiológica, herramientas de gestión clínica y desarrollo de software médico institucional.</p>
+        <div class="content-padding">
+            <!-- Título y Rol -->
+            <h1>Dr. Carlos Badillo</h1>
+            <div class="badge">Epidemiología • CMN 20 de Noviembre</div>
+            <p class="bio">Sistemas de vigilancia epidemiológica, herramientas de gestión clínica y desarrollo de software médico institucional.</p>
 
-        <!-- Enlaces -->
-        <div class="links-list">
-            
-            <!-- Menú Desplegable con los 6 enlaces de medidas de precaución -->
-            <details>
-                <summary>
-                    <div class="left">
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <span>Medidas de Precaución</span>
+            <!-- Enlaces -->
+            <div class="links-list">
+                
+                <!-- Menú Desplegable con los 6 enlaces de medidas de precaución -->
+                <details>
+                    <summary>
+                        <div class="left">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <span>Medidas de Precaución</span>
+                        </div>
+                        <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                    </summary>
+
+                    <div class="submenu">
+                        <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=estandar" target="_blank" class="sub-card estandar">
+                            <div class="left">
+                                <i class="fa-solid fa-circle-check"></i>
+                                <span>Precaucions Estàndar</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                        </a>
+
+                        <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=protector" target="_blank" class="sub-card protector">
+                            <div class="left">
+                                <i class="fa-solid fa-user-shield"></i>
+                                <span>Aïllament Protector</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                        </a>
+
+                        <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=contacto" target="_blank" class="sub-card contacto">
+                            <div class="left">
+                                <i class="fa-solid fa-handshake-angle"></i>
+                                <span>Precaucions per Contacte</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                        </a>
+
+                        <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=contacto-plus" target="_blank" class="sub-card contacto-plus">
+                            <div class="left">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                                <span>Precaucions per Contacte Plus</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                        </a>
+
+                        <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=gotas" target="_blank" class="sub-card gotas">
+                            <div class="left">
+                                <i class="fa-solid fa-droplet"></i>
+                                <span>Precaucions per Gotes</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                        </a>
+
+                        <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=aerea" target="_blank" class="sub-card aerea">
+                            <div class="left">
+                                <i class="fa-solid fa-wind"></i>
+                                <span>Precaucions per Via Aèria</span>
+                            </div>
+                            <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
+                        </a>
                     </div>
-                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
-                </summary>
+                </details>
 
-                <div class="submenu">
-                    <!-- 1. Estándar -->
-                    <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=estandar" target="_blank" class="sub-card estandar">
-                        <div class="left">
-                            <i class="fa-solid fa-circle-check"></i>
-                            <span>Precauciones Estándar</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
-                    </a>
+                <a href="#" target="_blank" class="link-card">
+                    <div class="left">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <span>Sistema VIGILE (Panel Streamlit)</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
 
-                    <!-- 2. Aislamiento Protector -->
-                    <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=protector" target="_blank" class="sub-card protector">
-                        <div class="left">
-                            <i class="fa-solid fa-user-shield"></i>
-                            <span>Aislamiento Protector</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
-                    </a>
+                <a href="#" target="_blank" class="link-card">
+                    <div class="left">
+                        <i class="fa-solid fa-file-lines"></i>
+                        <span>Protocols i Publicacions</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
 
-                    <!-- 3. Contacto -->
-                    <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=contacto" target="_blank" class="sub-card contacto">
-                        <div class="left">
-                            <i class="fa-solid fa-handshake-angle"></i>
-                            <span>Precauciones por Contacto</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
-                    </a>
+                <a href="mailto:carlosju.med21@gmail.com" class="link-card">
+                    <div class="left">
+                        <i class="fa-solid fa-envelope"></i>
+                        <span>Contacte Professional</span>
+                    </div>
+                    <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
 
-                    <!-- 4. Contacto Plus -->
-                    <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=contacto-plus" target="_blank" class="sub-card contacto-plus">
-                        <div class="left">
-                            <i class="fa-solid fa-triangle-exclamation"></i>
-                            <span>Precauciones por Contacto Plus</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
-                    </a>
-
-                    <!-- 5. Gotas -->
-                    <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=gotas" target="_blank" class="sub-card gotas">
-                        <div class="left">
-                            <i class="fa-solid fa-droplet"></i>
-                            <span>Precauciones por Gotas</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
-                    </a>
-
-                    <!-- 6. Vía Aérea -->
-                    <a href="https://medidasdeprecaucioninterectivo26.ai.studio/?protocolo=aerea" target="_blank" class="sub-card aerea">
-                        <div class="left">
-                            <i class="fa-solid fa-wind"></i>
-                            <span>Precauciones por Vía Aérea</span>
-                        </div>
-                        <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
-                    </a>
-                </div>
-            </details>
-
-            <a href="#" target="_blank" class="link-card">
-                <div class="left">
-                    <i class="fa-solid fa-laptop-code"></i>
-                    <span>Sistema VIGILE (Panel Streamlit)</span>
-                </div>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-
-            <a href="#" target="_blank" class="link-card">
-                <div class="left">
-                    <i class="fa-solid fa-file-lines"></i>
-                    <span>Protocolos y Publicaciones</span>
-                </div>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
-
-            <!-- Contacto Profesional Automático -->
-            <a href="mailto:carlosju.med21@gmail.com" class="link-card">
-                <div class="left">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>Contacto Profesional</span>
-                </div>
-                <i class="fa-solid fa-chevron-right"></i>
-            </a>
+            <footer>
+                Desenvolupat per a <a href="#">ResidentesCMN20nov</a> &copy; 2026
+            </footer>
         </div>
-
-        <footer>
-            Desarrollado para <a href="#">ResidentesCMN20nov</a> &copy; 2026
-        </footer>
     </div>
 
 </body>
