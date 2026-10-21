@@ -138,22 +138,70 @@
             transition: transform 0.3s ease;
         }
 
-        /* Submenú desplegable de precauciones */
-        .submenu {
-            display: none;
-            flex-direction: column;
-            gap: 10px;
-            margin-top: 10px;
-            padding-left: 15px;
+        /* Submenú desplegable de precauciones estilo acordeón nativo */
+        details {
+            background: var(--bg-color);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            transition: all 0.2s ease;
+            overflow: hidden;
         }
 
-        .submenu.active {
+        details[open] {
+            border-color: var(--accent);
+            background: var(--card-hover);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        summary {
             display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            cursor: pointer;
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--text-main);
+            user-select: none;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary .left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        summary i {
+            font-size: 18px;
+            color: var(--accent);
+            width: 24px;
+            text-align: center;
+        }
+
+        details[open] summary .arrow-icon {
+            transform: rotate(90deg);
+        }
+
+        .arrow-icon {
+            font-size: 12px;
+            color: var(--text-muted);
+            transition: transform 0.3s ease;
+        }
+
+        .submenu {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0 15px 15px 15px;
         }
 
         .sub-card {
-            background: rgba(22, 27, 34, 0.8);
-            border: 1px dashed var(--border);
+            background: rgba(22, 27, 34, 0.9);
+            border: 1px solid var(--border);
             padding: 12px 16px;
             border-radius: 10px;
             color: var(--text-main);
@@ -166,9 +214,8 @@
         }
 
         .sub-card:hover {
-            background: var(--card-hover);
+            background: var(--bg-color);
             border-color: var(--accent);
-            border-style: solid;
             transform: translateY(-1px);
         }
 
@@ -216,18 +263,17 @@
         <!-- Enlaces -->
         <div class="links-list">
             
-            <!-- Botón Principal con Desplegable -->
-            <div>
-                <button class="link-card" onclick="toggleSubmenu()">
+            <!-- Menú Desplegable con etiquetas nativas HTML -->
+            <details>
+                <summary>
                     <div class="left">
                         <i class="fa-solid fa-shield-halved"></i>
                         <span>Medidas de Precaución</span>
                     </div>
-                    <i class="fa-solid fa-chevron-right arrow-icon" id="arrow"></i>
-                </button>
+                    <i class="fa-solid fa-chevron-right arrow-icon"></i>
+                </summary>
 
-                <!-- Submenú con enlaces individuales directos -->
-                <div class="submenu" id="precautionsSubmenu">
+                <div class="submenu">
                     <a href="estandart.png" target="_blank" class="sub-card">
                         <div class="left">
                             <i class="fa-solid fa-circle-check"></i>
@@ -276,7 +322,7 @@
                         <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i>
                     </a>
                 </div>
-            </div>
+            </details>
 
             <a href="#" target="_blank" class="link-card">
                 <div class="left">
@@ -307,22 +353,6 @@
             Desarrollado para <a href="#">ResidentesCMN20nov</a> &copy; 2026
         </footer>
     </div>
-
-    <!-- Script de control para el menú desplegable -->
-    <script>
-        function toggleSubmenu() {
-            const submenu = document.getElementById('precautionsSubmenu');
-            const arrow = document.getElementById('arrow');
-            
-            submenu.classList.toggle('active');
-            
-            if (submenu.classList.contains('active')) {
-                arrow.style.transform = 'rotate(90deg)';
-            } else {
-                arrow.style.transform = 'rotate(0deg)';
-            }
-        }
-    </script>
 
 </body>
 </html>
