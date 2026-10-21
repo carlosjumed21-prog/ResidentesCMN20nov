@@ -163,6 +163,8 @@
             align-items: center;
             gap: 12px;
             transition: all 0.2s ease;
+            cursor: pointer;
+            text-align: left;
         }
 
         .sub-card:hover {
@@ -174,6 +176,63 @@
         .sub-card i {
             color: var(--accent);
             font-size: 15px;
+        }
+
+        /* Estilo para la Ventana Modal (Pantalla externa de imagen) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            position: relative;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 90%;
+            max-height: 90vh;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.7);
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 70vh;
+            border-radius: 10px;
+            object-fit: contain;
+            margin-top: 10px;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: var(--text-muted);
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .close-btn:hover {
+            color: var(--text-main);
         }
 
         footer {
@@ -214,32 +273,32 @@
                     <i class="fa-solid fa-chevron-right arrow-icon" id="arrow"></i>
                 </button>
 
-                <!-- Submenú con las 6 categorías -->
+                <!-- Submenú con las 6 categorías (Llaman a la función showImage con su título e imagen) -->
                 <div class="submenu" id="precautionsSubmenu">
-                    <a href="#" class="sub-card">
+                    <div class="sub-card" onclick="showImage('Precauciones Estándar', 'ruta-o-url-imagen-estandar.jpg')">
                         <i class="fa-solid fa-circle-check"></i>
                         <span>Precauciones Estándar</span>
-                    </a>
-                    <a href="#" class="sub-card">
+                    </div>
+                    <div class="sub-card" onclick="showImage('Precauciones Aislamiento Protector', 'ruta-o-url-imagen-protector.jpg')">
                         <i class="fa-solid fa-user-shield"></i>
                         <span>Precauciones Aislamiento Protector</span>
-                    </a>
-                    <a href="#" class="sub-card">
+                    </div>
+                    <div class="sub-card" onclick="showImage('Precauciones por Contacto', 'ruta-o-url-imagen-contacto.jpg')">
                         <i class="fa-solid fa-handshake-angle"></i>
                         <span>Precauciones por Contacto</span>
-                    </a>
-                    <a href="#" class="sub-card">
+                    </div>
+                    <div class="sub-card" onclick="showImage('Precauciones por Contacto Plus', 'ruta-o-url-imagen-contacto-plus.jpg')">
                         <i class="fa-solid fa-triangle-exclamation"></i>
                         <span>Precauciones por Contacto Plus</span>
-                    </a>
-                    <a href="#" class="sub-card">
+                    </div>
+                    <div class="sub-card" onclick="showImage('Precauciones por Gotas', 'ruta-o-url-imagen-gotas.jpg')">
                         <i class="fa-solid fa-droplet"></i>
                         <span>Precauciones por Gotas</span>
-                    </a>
-                    <a href="#" class="sub-card">
+                    </div>
+                    <div class="sub-card" onclick="showImage('Precauciones por Vía Aérea', 'ruta-o-url-imagen-aerea.jpg')">
                         <i class="fa-solid fa-wind"></i>
                         <span>Precauciones por Vía Aérea</span>
-                    </a>
+                    </div>
                 </div>
             </div>
 
@@ -273,7 +332,16 @@
         </footer>
     </div>
 
-    <!-- Script para abrir/cerrar el menú desplegable -->
+    <!-- Ventana Modal para mostrar la imagen -->
+    <div class="modal" id="imageModal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 class="modal-title" id="modalTitle">Título de la Precaución</h3>
+            <img id="modalImage" src="" alt="Infografía de Precaución">
+        </div>
+    </div>
+
+    <!-- Script de control -->
     <script>
         function toggleSubmenu() {
             const submenu = document.getElementById('precautionsSubmenu');
@@ -286,6 +354,16 @@
             } else {
                 arrow.style.transform = 'rotate(0deg)';
             }
+        }
+
+        function showImage(title, imageUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalImage').src = imageUrl;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
         }
     </script>
 
